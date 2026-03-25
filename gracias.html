@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¡Gracias por contactarme! - Joel Dev</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #0a192f, #112240);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #ccd6f6;
+        }
+        .gracias-container {
+            text-align: center;
+            padding: 40px;
+            background: rgba(17, 34, 64, 0.8);
+            border-radius: 20px;
+            border: 1px solid #64ffda;
+            max-width: 500px;
+            margin: 20px;
+        }
+        h1 {
+            color: #64ffda;
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+        p {
+            font-size: 18px;
+            margin-bottom: 30px;
+            color: #8892b0;
+        }
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background: #64ffda;
+            color: #0a192f;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: transform 0.3s;
+        }
+        .btn:hover {
+            transform: translateY(-3px);
+        }
+        .datos {
+            background: rgba(100, 255, 218, 0.1);
+            padding: 15px;
+            border-radius: 10px;
+            margin-top: 20px;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+    <div class="gracias-container">
+        <h1>🎉 ¡Gracias!</h1>
+        <p>Tu mensaje ha sido enviado correctamente. Me pondré en contacto contigo a la brevedad.</p>
+        <a href="index.html" class="btn">Volver al inicio</a>
+        
+        <div class="datos">
+            <strong>Información enviada:</strong><br>
+            Nombre: <span id="mostrarNombre"></span><br>
+            Email: <span id="mostrarEmail"></span><br>
+            Mensaje: <span id="mostrarMensaje"></span>
+        </div>
+    </div>
+    
+    <script>
+        // Mostrar los datos enviados desde el formulario
+        const urlParams = new URLSearchParams(window.location.search);
+        document.getElementById('mostrarNombre').textContent = urlParams.get('nombre') || 'No especificado';
+        document.getElementById('mostrarEmail').textContent = urlParams.get('email') || 'No especificado';
+        document.getElementById('mostrarMensaje').textContent = urlParams.get('mensaje') || 'No especificado';
+    </script>
+</body>
+</html>
